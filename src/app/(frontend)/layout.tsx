@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-
-import { LenisProvider } from '@/providers/lenis';
 import { metadata } from '../metadata';
+
+import { LenisProvider, ThemeProvider } from '@/providers';
 
 export async function generateMetadata(): Promise<Metadata> {
   return { ...metadata };
@@ -14,8 +14,13 @@ export default function FrontendLayout({
 }>) {
   return (
     <LenisProvider>
-      {/* <Header /> */}
-      {children}
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+      >
+        {children}
+      </ThemeProvider>
     </LenisProvider>
   );
 }
