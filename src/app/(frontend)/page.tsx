@@ -13,6 +13,7 @@ function MainContent() {
   return (
     <div>
       <h1>Evening Labs.</h1>
+      <p>A collection of creatives who </p>
     </div>
   );
 }
