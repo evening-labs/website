@@ -8,7 +8,7 @@ export default function Home() {
       <div className="relative w-full max-w-7xl h-full min-h-screen mx-auto grid xl:grid-cols-[18rem_1fr]">
         <Sidebar />
         <main 
-          className="bg-primary-foreground m-4 min-h-[200vh]"
+          className="bg- m-4 min-h-[200vh]"
           id="top"
         >
           <About />
@@ -43,22 +43,86 @@ function Services() {
   return (
     <div
       id="services"
-      className="h-screen flex items-center px-8"
+      className="min-h-screen flex items-center px-8"
     >
       <div className="max-w-4xl">
         <h2 className="text-3xl md:text-5xl font-light text-foreground mb-12 tracking-tight">
           What We Do
         </h2>
-        <div className="space-y-8">
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light mb-8">
-            Web Development, Mobile Apps, UI/UX Design, Brand Identity, E-commerce Solutions, API Development, Database Design, Cloud Architecture, Performance Optimization, Security Audits, Content Management Systems, Progressive Web Apps, React Applications, Next.js Development, TypeScript Implementation, Node.js Backends, Python Development, Machine Learning Integration, Data Visualization, Analytics Implementation, SEO Optimization, Accessibility Compliance, Cross-platform Development, Microservices Architecture, DevOps Automation, CI/CD Pipelines, Docker Containerization, AWS Cloud Services, Google Cloud Platform, Azure Solutions, Firebase Integration, Stripe Payment Processing, Third-party Integrations, Custom Software Development, Legacy System Modernization, Technical Consulting, Code Reviews, Team Training, Project Management, Agile Development, Quality Assurance, Testing Automation, Performance Monitoring, User Research, Market Analysis, Competitive Analysis, Product Strategy, Feature Planning, Technical Documentation, System Architecture, Scalability Planning, Maintenance & Support
-          </p>
-          <p className="text-base md:text-lg text-foreground leading-relaxed font-light max-w-2xl mx-auto">
-            Every project is unique, and so is our approach. We carefully curate the right creative minds and technical experts for each challenge, ensuring your vision comes to life with precision and innovation.
-          </p>
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left column: sticky explanation */}
+          <div className="md:sticky md:top-24 self-start">
+            <p className="text-base md:text-lg text-foreground leading-relaxed max-w-2xl">
+              Every project is unique, and so is our approach. We carefully curate the right creative minds and technical experts for each challenge, ensuring your vision comes to life with precision and innovation.
+            </p>
+          </div>
+          {/* Right column: list of services */}
+          <div className="space-y-2">
+            {[
+              "Web Development",
+              "Mobile Apps",
+              "UI/UX Design",
+              "Brand Identity",
+              "E-commerce Solutions",
+              "API Development",
+              "Database Design",
+              "Cloud Architecture",
+              "Performance Optimization",
+              "Security Audits",
+              "Content Management Systems",
+              "Progressive Web Apps",
+              "React Applications",
+              "Next.js Development",
+              "TypeScript Implementation",
+              "Node.js Backends",
+              "Python Development",
+              "Machine Learning Integration",
+              "Data Visualization",
+              "Analytics Implementation",
+              "SEO Optimization",
+              "Accessibility Compliance",
+              "Cross-platform Development",
+              "Microservices Architecture",
+              "DevOps Automation",
+              "CI/CD Pipelines",
+              "Docker Containerization",
+              "AWS Cloud Services",
+              "Google Cloud Platform",
+              "Azure Solutions",
+              "Firebase Integration",
+              "Stripe Payment Processing",
+              "Third-party Integrations",
+              "Custom Software Development",
+              "Legacy System Modernization",
+              "Technical Consulting",
+              "Code Reviews",
+              "Team Training",
+              "Project Management",
+              "Agile Development",
+              "Quality Assurance",
+              "Testing Automation",
+              "Performance Monitoring",
+              "User Research",
+              "Market Analysis",
+              "Competitive Analysis",
+              "Product Strategy",
+              "Feature Planning",
+              "Technical Documentation",
+              "System Architecture",
+              "Scalability Planning",
+              "Maintenance & Support"
+            ].map((service) => (
+              <span
+                key={service}
+                className="relative opacity-40 text-lg md:text-xl text-muted-foreground leading-relaxed mb-1 block"
+              >
+                {service}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
     </div>
+  </div>
   )
 }
 
