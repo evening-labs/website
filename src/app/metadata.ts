@@ -4,15 +4,19 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: {
     default: 'Evening Labs',
-    template: '%s | Evening Labs',
+    template: '%s | Evening Labs'
   },
-  description: 'Evening Labs - Building innovative solutions for the modern web',
+  description:
+    'A creative digital studio crafting meaningful experiences at the intersection of design and technology.',
   keywords: [
+    'digital agency',
+    'web design',
+    'ui/ux design',
     'web development',
-    'software development',
-    'technology',
-    'innovation',
-    'evening labs',
+    'creative studio',
+    'brand identity',
+    'digital strategy',
+    'evening labs'
   ],
   authors: [{ name: 'Evening Labs' }],
   creator: 'Evening Labs',
@@ -20,34 +24,43 @@ export const metadata: Metadata = {
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
+    telephone: false
   },
-  metadataBase: new URL('https://eveninglabs.com'), // Replace with your actual domain
+  metadataBase: new URL('https://eveninglabs.co'),
   alternates: {
-    canonical: '/',
+    canonical: '/'
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
+    apple: { url: '/favicon.svg', type: 'image/svg+xml' }
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://eveninglabs.com', // Replace with your actual domain
+    url: 'https://eveninglabs.co',
     siteName: 'Evening Labs',
-    title: 'Evening Labs',
-    description: 'Evening Labs - Building innovative solutions for the modern web',
+    title: 'Evening Labs - Creative Digital Studio',
+    description:
+      'A creative digital studio crafting meaningful experiences at the intersection of design and technology.',
     images: [
       {
-        url: '/og-image.jpg', // Add your Open Graph image
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Evening Labs',
-      },
-    ],
+        alt: 'Evening Labs - Creative Digital Studio'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Evening Labs',
-    description: 'Evening Labs - Building innovative solutions for the modern web',
-    images: ['/og-image.jpg'], // Add your Twitter image
-    creator: '@eveninglabs', // Replace with your Twitter handle
+    title: 'Evening Labs - Creative Digital Studio',
+    description:
+      'A creative digital studio crafting meaningful experiences at the intersection of design and technology.',
+    images: ['/og-image.jpg'],
+    creator: '@eveninglabs'
   },
   robots: {
     index: true,
@@ -57,16 +70,10 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+      'max-snippet': -1
+    }
   },
-  verification: {
-    // Add your verification codes here
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
-    // yahoo: 'your-yahoo-verification-code',
-  },
-  category: 'technology',
+  category: 'business'
 };
 
 // Page-specific metadata functions
@@ -74,7 +81,7 @@ export function generatePageMetadata({
   title,
   description,
   path = '',
-  image,
+  image
 }: {
   title: string;
   description?: string;
@@ -82,7 +89,7 @@ export function generatePageMetadata({
   image?: string;
 }): Metadata {
   const url = `https://eveninglabs.com${path}`;
-  
+
   return {
     title,
     description: description || metadata.description,
@@ -90,16 +97,18 @@ export function generatePageMetadata({
       ...metadata.openGraph,
       title,
       url,
-      images: image ? [{ url: image, width: 1200, height: 630, alt: title }] : metadata.openGraph?.images,
+      images: image
+        ? [{ url: image, width: 1200, height: 630, alt: title }]
+        : metadata.openGraph?.images
     },
     twitter: {
       ...metadata.twitter,
       title,
-      images: image ? [image] : metadata.twitter?.images,
+      images: image ? [image] : metadata.twitter?.images
     },
     alternates: {
-      canonical: url,
-    },
+      canonical: url
+    }
   };
 }
 
@@ -107,31 +116,33 @@ export function generatePageMetadata({
 export const metadataTemplates = {
   home: generatePageMetadata({
     title: 'Evening Labs',
-    description: 'Evening Labs - Building innovative solutions for the modern web',
-    path: '/',
+    description:
+      'Evening Labs - Building innovative solutions for the modern web',
+    path: '/'
   }),
-  
+
   about: generatePageMetadata({
     title: 'About Us',
-    description: 'Learn more about Evening Labs and our mission to build innovative web solutions',
-    path: '/about',
+    description:
+      'Learn more about Evening Labs and our mission to build innovative web solutions',
+    path: '/about'
   }),
-  
+
   contact: generatePageMetadata({
     title: 'Contact',
     description: 'Get in touch with Evening Labs for your next project',
-    path: '/contact',
+    path: '/contact'
   }),
-  
+
   blog: generatePageMetadata({
     title: 'Blog',
     description: 'Latest insights and updates from Evening Labs',
-    path: '/blog',
+    path: '/blog'
   }),
-  
+
   projects: generatePageMetadata({
     title: 'Projects',
     description: 'Explore our portfolio of innovative web projects',
-    path: '/projects',
-  }),
+    path: '/projects'
+  })
 };
