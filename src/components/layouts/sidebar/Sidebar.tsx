@@ -12,7 +12,9 @@ export default function Sidebar() {
   return (
     <aside className='sticky top-0 h-screen flex flex-col items-start justify-between pt-10 pb-4 px-4 '>
       <Header />
-      <Nav />
+      <div className="hidden md:block w-full">
+        <Nav />
+      </div>
       <Footer />
     </aside>
   )
