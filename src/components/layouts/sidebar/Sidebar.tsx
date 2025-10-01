@@ -48,7 +48,7 @@ function Logo() {
             damping: 12,
           }} 
           className='size-6 bg-primary rounded-full'/>
-        <span className='text-sidebar-primary-foreground text-2xl font-medium flex'>
+        <span className='text-foreground text-2xl font-medium flex'>
           {characters.map((char, index) => (
             <motion.span
               key={index}
@@ -137,7 +137,7 @@ function NavItem({ href, label }: { href: string, label: string }) {
   return (
     <Link 
       href={href}
-      className='text-sidebar-primary-foreground text-sm font-medium hover:text-primary transition-colors duration-300'
+      className='text-foreground text-sm font-medium hover:text-primary transition-colors duration-300'
     >
       {label}
     </Link>
