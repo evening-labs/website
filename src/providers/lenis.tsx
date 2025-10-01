@@ -7,7 +7,12 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     <ReactLenis
       root
       options={{
-        lerp: 0.2
+        lerp: 0.15,
+        smoothWheel: true,
+        anchors: {
+          duration: 1.5,
+          offset: -64,
+        }
       }}
     >
       {children}

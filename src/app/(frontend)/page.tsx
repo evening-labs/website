@@ -7,10 +7,90 @@ export default function Home() {
     <div className="w-full">
       <div className="relative w-full max-w-7xl h-full min-h-screen mx-auto grid xl:grid-cols-[18rem_1fr]">
         <Sidebar />
-        <main className="bg-primary-foreground m-4 min-h-[200vh]">
-          We are closed.
+        <main 
+          className="bg-primary-foreground m-4 min-h-[200vh]"
+          id="top"
+        >
+          <About />
+          <Services />
+          <Contact />
         </main>
       </div>
     </div>
   );
+}
+
+
+function About() {
+  return (
+    <div
+      id="about"
+      className="h-screen flex items-center px-8"
+    >
+      <div className="max-w-2xl">
+        <h1 className="text-4xl md:text-6xl font-light text-foreground mb-8 tracking-tight">
+          Evening Labs
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+          We craft digital experiences that matter. Our team brings together the perfect blend of creativity and technical expertise to build solutions that not only look beautiful but perform flawlessly.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function Services() {
+  return (
+    <div
+      id="services"
+      className="h-screen flex items-center px-8"
+    >
+      <div className="max-w-4xl">
+        <h2 className="text-3xl md:text-5xl font-light text-foreground mb-12 tracking-tight">
+          What We Do
+        </h2>
+        <div className="space-y-8">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light mb-8">
+            Web Development, Mobile Apps, UI/UX Design, Brand Identity, E-commerce Solutions, API Development, Database Design, Cloud Architecture, Performance Optimization, Security Audits, Content Management Systems, Progressive Web Apps, React Applications, Next.js Development, TypeScript Implementation, Node.js Backends, Python Development, Machine Learning Integration, Data Visualization, Analytics Implementation, SEO Optimization, Accessibility Compliance, Cross-platform Development, Microservices Architecture, DevOps Automation, CI/CD Pipelines, Docker Containerization, AWS Cloud Services, Google Cloud Platform, Azure Solutions, Firebase Integration, Stripe Payment Processing, Third-party Integrations, Custom Software Development, Legacy System Modernization, Technical Consulting, Code Reviews, Team Training, Project Management, Agile Development, Quality Assurance, Testing Automation, Performance Monitoring, User Research, Market Analysis, Competitive Analysis, Product Strategy, Feature Planning, Technical Documentation, System Architecture, Scalability Planning, Maintenance & Support
+          </p>
+          <p className="text-base md:text-lg text-foreground leading-relaxed font-light max-w-2xl mx-auto">
+            Every project is unique, and so is our approach. We carefully curate the right creative minds and technical experts for each challenge, ensuring your vision comes to life with precision and innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Contact() {
+  return (
+    <div
+      id="contact"
+      className="h-screen flex items-center px-8"
+    >
+      <div>
+        <h2 className="text-3xl md:text-5xl font-light text-foreground mb-12 tracking-tight">
+          Looking to Chat?
+        </h2>
+        <div className="space-y-6">
+          <div>
+            <a 
+              href="mailto:hello@eveninglabs.io"
+              className="text-xl md:text-2xl text-muted-foreground hover:text-foreground transition-colors duration-200 font-light"
+            >
+              hello@eveninglabs.io
+            </a>
+          </div>
+          <div>
+            <a 
+              href="tel:+1234567890"
+              className="text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors duration-200 font-light"
+            >
+              +14159185765
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

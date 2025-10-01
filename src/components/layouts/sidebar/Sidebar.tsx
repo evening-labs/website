@@ -18,7 +18,7 @@ export default function Sidebar() {
   )
 }
 
-
+/// COMPONENTS ////////////////////////////////////////////////////////////////////////////////////////////
 
 function Logo() {
   
@@ -28,8 +28,8 @@ function Logo() {
   
   return (
     <motion.a 
-      href='/'
-      className='relative w-full flex flex-row items-center gap-2 select-none'
+      href='/#top'
+      className='relative w-full flex flex-row items-center gap-2'
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
@@ -106,7 +106,6 @@ function Logo() {
   )
 }
 
-
 function Header() {
   return (
     <header className='w-full flex flex-col gap-2'>
@@ -116,13 +115,30 @@ function Header() {
 }
 
 function Nav() {
+
+  const navItems = [
+    { href: "/#about", label: "About" },
+    { href: "/#services", label: "Services" },
+    { href: "/#contact", label: "Contact" },
+  ]
+
   return (
     <nav className='w-full flex flex-col gap-2'>
-      <ul>Services</ul>
-      <ul>Portfolio</ul>
-      <ul>About</ul>
-      <ul>Contact</ul>
+      {navItems.map((item) => (
+        <NavItem key={item.href} href={item.href} label={item.label} />
+      ))}
     </nav>
+  )
+}
+
+function NavItem({ href, label }: { href: string, label: string }) {
+  return (
+    <Link 
+      href={href}
+      className='text-sidebar-primary-foreground text-sm font-medium hover:text-primary transition-colors duration-300'
+    >
+      {label}
+    </Link>
   )
 }
 
@@ -165,20 +181,7 @@ function FooterClock() {
 
   return (
     <div className="flex flex-row items-center gap-2 text-[10px] tracking-[0.05rem] text-muted-foreground font-regular">
-      <Clock
-        className="opacity-60"
-        value={value}
-        size={20}
-        locale="en-US"
-        hourHandWidth={1}
-        minuteHandWidth={1}
-        secondHandWidth={1}
-        hourHandLength={48}
-        minuteHandLength={70}
-        minuteMarksLength={0}
-        hourMarksLength={0}
-        renderSecondHand={false}
-      />
+      <Clock className="opacity-60" value={value} size={20} locale="en-US" hourHandWidth={1} minuteHandWidth={1} secondHandWidth={1} hourHandLength={48} minuteHandLength={70} minuteMarksLength={0} hourMarksLength={0} renderSecondHand={false} />
       {value.toLocaleString('en-US', {
         hour: '2-digit',
         minute: '2-digit',
